@@ -1,0 +1,66 @@
+/* Paleta Sky Airline: azul cielo profundo + naranja vuelo, sobre fondo gris claro */
+.root-pane {
+    -fx-background-color: #F2F5F8;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.app-header {
+    -fx-background-color: #06294D;
+}
+
+.app-title {
+    -fx-text-fill: #F2F5F8;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.panel-heading {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #06294D;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #06294D;
+}
+
+.tab {
+    -fx-background-color: #0A4B8C;
+}
+
+.tab:selected {
+    -fx-background-color: #FF6B35;
+}
+
+.tab .tab-label {
+    -fx-text-fill: #F2F5F8;
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+    -fx-text-fill: #06294D;
+}
+
+.btn-primary {
+    -fx-background-color: #FF6B35;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.status-label {
+    -fx-text-fill: #5b6570;
+    -fx-font-size: 12px;
+}
+
+.table-view {
+    -fx-background-color: white;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #06294D;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #F2F5F8;
+    -fx-font-weight: bold;
+}
