@@ -1,19 +1,38 @@
 package com.skyairlines.config;
 
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public enum ConexionBD {
     INSTANCE;
 
-    private static final String URL = "jdbc:postgresql://localhost:5432/skyairline_db";
-    private static final String USER = "postgres";
-    private static final String PASS = "123123123";
+    private final String url;
+    private final String user;
+    private final String password;
 
-    static {
+    ConexionBD() {
+        Properties props = new Properties();
+        try (InputStream is = getClass().getClassLoader().getResourceAsStream("db/config.properties")) {
+            if (is != null) {
+                props.load(is);
+                System.out.println("[SkyAirlines] Config loaded from config.properties");
+            } else {
+                System.out.println("[SkyAirlines] config.properties not found, using defaults");
+            }
+        } catch (Exception e) {
+            System.out.println("[SkyAirlines] Error loading config.properties, using defaults");
+        }
+
+        this.url = props.getProperty("db.url", "jdbc:postgresql://localhost:5432/skyairline_db");
+        this.user = props.getProperty("db.user", "postgres");
+        this.password = props.getProperty("db.password", "postgres");
+
+        String driver = props.getProperty("db.driver", "org.postgresql.Driver");
         try {
-            Class.forName("org.postgresql.Driver");
+            Class.forName(driver);
             System.out.println("[SkyAirlines] PostgreSQL driver loaded");
         } catch (ClassNotFoundException e) {
             throw new RuntimeException("PostgreSQL driver not found", e);
@@ -21,7 +40,7 @@ public enum ConexionBD {
     }
 
     public Connection getConnection() throws SQLException {
-        Connection conn = DriverManager.getConnection(URL, USER, PASS);
+        Connection conn = DriverManager.getConnection(url, user, password);
         conn.setAutoCommit(false);
         return conn;
     }
