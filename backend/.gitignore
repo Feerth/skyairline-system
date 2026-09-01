@@ -1,0 +1,44 @@
+# Build output
+target/
+build/
+out/
+
+# IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+.classpath
+.project
+.settings/
+nbproject/
+nb-configuration.xml
+nbactions.xml
+nbproject/private/
+
+# Maven
+dependency-reduced-pom.xml
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Compiled classes
+*.class
+
+# JAR in root (not in target)
+*.jar
+
+# Temp files
+*.tmp
+*.bak
