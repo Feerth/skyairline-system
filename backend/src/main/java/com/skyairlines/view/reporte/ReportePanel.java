@@ -24,7 +24,7 @@ public class ReportePanel extends JPanel {
         topBar.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(220, 220, 220)));
 
         JLabel title = new JLabel("Reportes");
-        title.setFont(new Font("Dialog", Font.BOLD, 22));
+        title.setFont(new Font("Dialog", Font.BOLD, 33));
         title.setForeground(COLOR_DARK);
         topBar.add(title);
 
@@ -42,8 +42,8 @@ public class ReportePanel extends JPanel {
                 BorderFactory.createLineBorder(new Color(200, 200, 200), 1),
                 BorderFactory.createEmptyBorder(50, 60, 50, 72)
         ));
-        card.setPreferredSize(new Dimension(800, 430));
-        card.setMaximumSize(new Dimension(800, 430));
+        card.setPreferredSize(new Dimension(1200, 645));
+        card.setMaximumSize(new Dimension(1200, 645));
 
         JLabel iconLabel = new JLabel("R");
         iconLabel.setFont(new Font("Dialog", Font.PLAIN, 72));
@@ -52,7 +52,7 @@ public class ReportePanel extends JPanel {
         card.add(Box.createVerticalStrut(20));
 
         JLabel constructionTitle = new JLabel("M\u00f3dulo en Construcci\u00f3n");
-        constructionTitle.setFont(new Font("Dialog", Font.BOLD, 35));
+        constructionTitle.setFont(new Font("Dialog", Font.BOLD, 52));
         constructionTitle.setForeground(COLOR_DARK);
         constructionTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
         card.add(constructionTitle);
@@ -62,14 +62,14 @@ public class ReportePanel extends JPanel {
                 "El m\u00f3dulo de reportes est\u00e1 siendo desarrollado. " +
                 "Pr\u00f3ximamente podr\u00e1s generar reportes de vuelos, pasajeros, equipaje y personal operativo." +
                 "</div></html>");
-        description.setFont(new Font("Dialog", Font.PLAIN, 18));
+        description.setFont(new Font("Dialog", Font.PLAIN, 27));
         description.setForeground(new Color(100, 100, 100));
         description.setAlignmentX(Component.CENTER_ALIGNMENT);
         card.add(description);
         card.add(Box.createVerticalStrut(30));
 
         JLabel versionLabel = new JLabel("VERSI\u00d3N ESTIMADA: Q1 2027");
-        versionLabel.setFont(new Font("Dialog", Font.BOLD, 17));
+        versionLabel.setFont(new Font("Dialog", Font.BOLD, 25));
         versionLabel.setForeground(COLOR_BLUE);
         versionLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         card.add(versionLabel);

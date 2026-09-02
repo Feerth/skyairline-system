@@ -50,14 +50,14 @@ public class PasajeroPanel extends JPanel {
         leftPanel.setOpaque(false);
 
         JButton btnVolver = new JButton("\u2190 Volver a Detalles");
-        btnVolver.setFont(new Font("Dialog", Font.BOLD, 17));
+        btnVolver.setFont(new Font("Dialog", Font.BOLD, 25));
         btnVolver.setForeground(COLOR_BLUE);
         btnVolver.setBackground(COLOR_WHITE);
         btnVolver.setFocusPainted(false);
         btnVolver.setBorderPainted(true);
         btnVolver.setBorder(BorderFactory.createLineBorder(COLOR_BLUE, 1));
         btnVolver.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnVolver.setPreferredSize(new Dimension(220, 42));
+        btnVolver.setPreferredSize(new Dimension(330, 63));
         btnVolver.addActionListener(e -> {
             if (mainFrame != null) {
                 mainFrame.showVueloDetalle(vueloId);
@@ -66,7 +66,7 @@ public class PasajeroPanel extends JPanel {
         leftPanel.add(btnVolver);
 
         JLabel title = new JLabel("Pasajeros del Vuelo #" + vueloId);
-        title.setFont(new Font("Dialog", Font.BOLD, 22));
+        title.setFont(new Font("Dialog", Font.BOLD, 33));
         title.setForeground(COLOR_DARK);
         leftPanel.add(title);
 
@@ -80,13 +80,13 @@ public class PasajeroPanel extends JPanel {
         searchPanel.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(230, 230, 230)));
 
         JLabel searchLabel = new JLabel("Filtrar por nombre:");
-        searchLabel.setFont(new Font("Dialog", Font.PLAIN, 16));
+        searchLabel.setFont(new Font("Dialog", Font.PLAIN, 24));
         searchLabel.setForeground(new Color(100, 100, 100));
         searchPanel.add(searchLabel);
 
         searchField = new JTextField();
-        searchField.setFont(new Font("Dialog", Font.PLAIN, 17));
-        searchField.setPreferredSize(new Dimension(300, 38));
+        searchField.setFont(new Font("Dialog", Font.PLAIN, 25));
+        searchField.setPreferredSize(new Dimension(300, 57));
         searchField.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createLineBorder(new Color(180, 180, 180)),
                 BorderFactory.createEmptyBorder(5, 8, 5, 8)
@@ -134,7 +134,7 @@ public class PasajeroPanel extends JPanel {
         statusBar.setBorder(BorderFactory.createMatteBorder(1, 0, 0, 0, new Color(220, 220, 220)));
 
         statusLabel = new JLabel("Total pasajeros: 0");
-        statusLabel.setFont(new Font("Dialog", Font.BOLD, 16));
+        statusLabel.setFont(new Font("Dialog", Font.BOLD, 24));
         statusLabel.setForeground(COLOR_DARK);
         statusBar.add(statusLabel);
 

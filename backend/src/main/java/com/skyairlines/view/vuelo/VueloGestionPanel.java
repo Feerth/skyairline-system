@@ -52,7 +52,7 @@ public class VueloGestionPanel extends JPanel {
         topBar.setBackground(new Color(245, 247, 250));
         topBar.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(220, 220, 220)),
-                BorderFactory.createEmptyBorder(10, 15, 10, 18)
+                BorderFactory.createEmptyBorder(10, 15, 10, 27)
         ));
 
         GridBagConstraints gbc = new GridBagConstraints();
@@ -61,35 +61,35 @@ public class VueloGestionPanel extends JPanel {
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
         JLabel lblCodigo = new JLabel("C\u00f3digo:");
-        lblCodigo.setFont(new Font("Dialog", Font.BOLD, 16));
+        lblCodigo.setFont(new Font("Dialog", Font.BOLD, 24));
         gbc.gridx = 0;
         gbc.weightx = 0;
         topBar.add(lblCodigo, gbc);
 
         searchCodeField = new JTextField(10);
         searchCodeField.setToolTipText("Buscar por c\u00f3digo...");
-        searchCodeField.setFont(new Font("Dialog", Font.PLAIN, 16));
-        searchCodeField.setPreferredSize(new Dimension(120, 38));
+        searchCodeField.setFont(new Font("Dialog", Font.PLAIN, 24));
+        searchCodeField.setPreferredSize(new Dimension(120, 57));
         gbc.gridx = 1;
         gbc.weightx = 0;
         topBar.add(searchCodeField, gbc);
 
         JLabel lblFecha = new JLabel("Fecha:");
-        lblFecha.setFont(new Font("Dialog", Font.BOLD, 16));
+        lblFecha.setFont(new Font("Dialog", Font.BOLD, 24));
         gbc.gridx = 2;
         gbc.weightx = 0;
         topBar.add(lblFecha, gbc);
 
         searchDateField = new JTextField(10);
         searchDateField.setToolTipText("dd/mm/aaaa");
-        searchDateField.setFont(new Font("Dialog", Font.PLAIN, 16));
-        searchDateField.setPreferredSize(new Dimension(100, 38));
+        searchDateField.setFont(new Font("Dialog", Font.PLAIN, 24));
+        searchDateField.setPreferredSize(new Dimension(100, 57));
         gbc.gridx = 3;
         gbc.weightx = 0;
         topBar.add(searchDateField, gbc);
 
         JLabel lblEstado = new JLabel("Estado:");
-        lblEstado.setFont(new Font("Dialog", Font.BOLD, 16));
+        lblEstado.setFont(new Font("Dialog", Font.BOLD, 24));
         gbc.gridx = 4;
         gbc.weightx = 0;
         topBar.add(lblEstado, gbc);
@@ -97,42 +97,42 @@ public class VueloGestionPanel extends JPanel {
         searchEstadoCombo = new JComboBox<>(new String[]{
                 "TODOS", "PROGRAMADO", "EMBARCANDO", "EN_VUELO", "COMPLETADO", "CANCELADO", "RETRASADO"
         });
-        searchEstadoCombo.setFont(new Font("Dialog", Font.PLAIN, 16));
+        searchEstadoCombo.setFont(new Font("Dialog", Font.PLAIN, 24));
         searchEstadoCombo.setPreferredSize(new Dimension(175, 44));
         gbc.gridx = 5;
         gbc.weightx = 0;
         topBar.add(searchEstadoCombo, gbc);
 
         JButton btnBuscar = SwingUtils.createStyledButton("Buscar", new Color(52, 152, 219), COLOR_WHITE);
-        btnBuscar.setPreferredSize(new Dimension(115, 42));
+        btnBuscar.setPreferredSize(new Dimension(172, 63));
         btnBuscar.addActionListener(e -> searchVuelos());
         gbc.gridx = 6;
         gbc.weightx = 0;
         topBar.add(btnBuscar, gbc);
 
         JSeparator separator = new JSeparator(JSeparator.VERTICAL);
-        separator.setPreferredSize(new Dimension(1, 38));
+        separator.setPreferredSize(new Dimension(1, 57));
         separator.setForeground(new Color(180, 180, 180));
         gbc.gridx = 7;
         gbc.weightx = 0;
         topBar.add(separator, gbc);
 
         JButton btnCrear = SwingUtils.createStyledButton("+ Crear", COLOR_GREEN, COLOR_WHITE);
-        btnCrear.setPreferredSize(new Dimension(140, 42));
+        btnCrear.setPreferredSize(new Dimension(210, 63));
         btnCrear.addActionListener(e -> crearVuelo());
         gbc.gridx = 8;
         gbc.weightx = 0;
         topBar.add(btnCrear, gbc);
 
         JButton btnEditar = SwingUtils.createStyledButton("Editar", COLOR_ORANGE, COLOR_WHITE);
-        btnEditar.setPreferredSize(new Dimension(115, 42));
+        btnEditar.setPreferredSize(new Dimension(172, 63));
         btnEditar.addActionListener(e -> editarVuelo());
         gbc.gridx = 9;
         gbc.weightx = 0;
         topBar.add(btnEditar, gbc);
 
         JButton btnEliminar = SwingUtils.createStyledButton("Eliminar", COLOR_RED, COLOR_WHITE);
-        btnEliminar.setPreferredSize(new Dimension(130, 42));
+        btnEliminar.setPreferredSize(new Dimension(195, 63));
         btnEliminar.addActionListener(e -> eliminarVuelo());
         gbc.gridx = 10;
         gbc.weightx = 0;
@@ -190,11 +190,11 @@ public class VueloGestionPanel extends JPanel {
         bottomBar.setBackground(new Color(245, 247, 250));
         bottomBar.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createMatteBorder(1, 0, 0, 0, new Color(220, 220, 220)),
-                BorderFactory.createEmptyBorder(8, 15, 8, 18)
+                BorderFactory.createEmptyBorder(8, 15, 8, 27)
         ));
 
         statusLabel = new JLabel("Total: 0 vuelos encontrados");
-        statusLabel.setFont(new Font("Dialog", Font.ITALIC, 16));
+        statusLabel.setFont(new Font("Dialog", Font.ITALIC, 24));
         statusLabel.setForeground(new Color(100, 100, 100));
         bottomBar.add(statusLabel);
 
@@ -353,7 +353,7 @@ public class VueloGestionPanel extends JPanel {
         private final JButton btn = new JButton("Ver Detalles");
 
         public VueloButtonRenderer() {
-            btn.setFont(new Font("Dialog", Font.BOLD, 15));
+            btn.setFont(new Font("Dialog", Font.BOLD, 22));
             btn.setForeground(new Color(0, 102, 204));
             btn.setBackground(new Color(240, 245, 255));
             btn.setFocusPainted(false);
@@ -362,7 +362,7 @@ public class VueloGestionPanel extends JPanel {
             btn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             btn.setBorder(BorderFactory.createCompoundBorder(
                     BorderFactory.createLineBorder(new Color(0, 102, 204), 1),
-                    BorderFactory.createEmptyBorder(4, 12, 4, 15)
+                    BorderFactory.createEmptyBorder(4, 12, 4, 22)
             ));
         }
 
@@ -386,14 +386,14 @@ public class VueloGestionPanel extends JPanel {
 
         public VueloDialog(JFrame owner, String title, Vuelo existingVuelo) {
             super(owner, title, true);
-            setSize(700, 650);
-            setMinimumSize(new Dimension(650, 600));
+            setSize(1050, 975);
+            setMinimumSize(new Dimension(975, 900));
             setLocationRelativeTo(owner);
             setResizable(true);
 
             JPanel formPanel = new JPanel(new GridBagLayout());
             formPanel.setBackground(COLOR_WHITE);
-            formPanel.setBorder(BorderFactory.createEmptyBorder(20, 25, 15, 25));
+            formPanel.setBorder(BorderFactory.createEmptyBorder(20, 25, 15, 38));
             GridBagConstraints gbc = new GridBagConstraints();
             gbc.insets = new Insets(10, 10, 10, 10);
             gbc.anchor = GridBagConstraints.WEST;
@@ -403,10 +403,10 @@ public class VueloGestionPanel extends JPanel {
             gbc.gridx = 0; gbc.gridy = row;
             gbc.weightx = 0; gbc.fill = GridBagConstraints.NONE;
             JLabel lblCodigo = new JLabel("Codigo de Vuelo:");
-            lblCodigo.setFont(new Font("Dialog", Font.BOLD, 16));
+            lblCodigo.setFont(new Font("Dialog", Font.BOLD, 24));
             formPanel.add(lblCodigo, gbc);
             codigoField = new JTextField(20);
-            codigoField.setFont(new Font("Dialog", Font.PLAIN, 16));
+            codigoField.setFont(new Font("Dialog", Font.PLAIN, 24));
             if (existingVuelo != null) codigoField.setText(existingVuelo.getCodigoVuelo());
             gbc.gridx = 1; gbc.gridy = row;
             gbc.weightx = 1; gbc.fill = GridBagConstraints.HORIZONTAL;
@@ -416,10 +416,10 @@ public class VueloGestionPanel extends JPanel {
             gbc.gridx = 0; gbc.gridy = row;
             gbc.weightx = 0; gbc.fill = GridBagConstraints.NONE;
             JLabel lblRuta = new JLabel("Ruta:");
-            lblRuta.setFont(new Font("Dialog", Font.BOLD, 16));
+            lblRuta.setFont(new Font("Dialog", Font.BOLD, 24));
             formPanel.add(lblRuta, gbc);
             rutaCombo = new JComboBox<>();
-            rutaCombo.setFont(new Font("Dialog", Font.PLAIN, 16));
+            rutaCombo.setFont(new Font("Dialog", Font.PLAIN, 24));
             gbc.gridx = 1; gbc.gridy = row;
             gbc.weightx = 1; gbc.fill = GridBagConstraints.HORIZONTAL;
             formPanel.add(rutaCombo, gbc);
@@ -428,10 +428,10 @@ public class VueloGestionPanel extends JPanel {
             gbc.gridx = 0; gbc.gridy = row;
             gbc.weightx = 0; gbc.fill = GridBagConstraints.NONE;
             JLabel lblAeronave = new JLabel("Aeronave:");
-            lblAeronave.setFont(new Font("Dialog", Font.BOLD, 16));
+            lblAeronave.setFont(new Font("Dialog", Font.BOLD, 24));
             formPanel.add(lblAeronave, gbc);
             aeronaveCombo = new JComboBox<>();
-            aeronaveCombo.setFont(new Font("Dialog", Font.PLAIN, 16));
+            aeronaveCombo.setFont(new Font("Dialog", Font.PLAIN, 24));
             gbc.gridx = 1; gbc.gridy = row;
             gbc.weightx = 1; gbc.fill = GridBagConstraints.HORIZONTAL;
             formPanel.add(aeronaveCombo, gbc);
@@ -440,10 +440,10 @@ public class VueloGestionPanel extends JPanel {
             gbc.gridx = 0; gbc.gridy = row;
             gbc.weightx = 0; gbc.fill = GridBagConstraints.NONE;
             JLabel lblFechaSalida = new JLabel("Fecha/Hora Salida:");
-            lblFechaSalida.setFont(new Font("Dialog", Font.BOLD, 16));
+            lblFechaSalida.setFont(new Font("Dialog", Font.BOLD, 24));
             formPanel.add(lblFechaSalida, gbc);
             fechaSalidaField = new JTextField(20);
-            fechaSalidaField.setFont(new Font("Dialog", Font.PLAIN, 16));
+            fechaSalidaField.setFont(new Font("Dialog", Font.PLAIN, 24));
             fechaSalidaField.setToolTipText("dd/mm/aaaa HH:mm");
             if (existingVuelo != null && existingVuelo.getFechaSalidaProgramada() != null) {
                 fechaSalidaField.setText(DateUtils.formatDateTime(existingVuelo.getFechaSalidaProgramada()));
@@ -456,10 +456,10 @@ public class VueloGestionPanel extends JPanel {
             gbc.gridx = 0; gbc.gridy = row;
             gbc.weightx = 0; gbc.fill = GridBagConstraints.NONE;
             JLabel lblFechaLlegada = new JLabel("Fecha/Hora Llegada:");
-            lblFechaLlegada.setFont(new Font("Dialog", Font.BOLD, 16));
+            lblFechaLlegada.setFont(new Font("Dialog", Font.BOLD, 24));
             formPanel.add(lblFechaLlegada, gbc);
             fechaLlegadaField = new JTextField(20);
-            fechaLlegadaField.setFont(new Font("Dialog", Font.PLAIN, 16));
+            fechaLlegadaField.setFont(new Font("Dialog", Font.PLAIN, 24));
             fechaLlegadaField.setToolTipText("dd/mm/aaaa HH:mm");
             if (existingVuelo != null && existingVuelo.getFechaLlegadaProgramada() != null) {
                 fechaLlegadaField.setText(DateUtils.formatDateTime(existingVuelo.getFechaLlegadaProgramada()));
@@ -472,12 +472,12 @@ public class VueloGestionPanel extends JPanel {
             gbc.gridx = 0; gbc.gridy = row;
             gbc.weightx = 0; gbc.fill = GridBagConstraints.NONE;
             JLabel lblEstado = new JLabel("Estado:");
-            lblEstado.setFont(new Font("Dialog", Font.BOLD, 16));
+            lblEstado.setFont(new Font("Dialog", Font.BOLD, 24));
             formPanel.add(lblEstado, gbc);
             estadoCombo = new JComboBox<>(new String[]{
                     "PROGRAMADO", "EMBARCANDO", "EN_VUELO", "COMPLETADO", "CANCELADO", "RETRASADO"
             });
-            estadoCombo.setFont(new Font("Dialog", Font.PLAIN, 16));
+            estadoCombo.setFont(new Font("Dialog", Font.PLAIN, 24));
             if (existingVuelo != null) {
                 estadoCombo.setSelectedItem(existingVuelo.getEstado());
             }
@@ -489,7 +489,7 @@ public class VueloGestionPanel extends JPanel {
             gbc.gridx = 0; gbc.gridy = row;
             gbc.weightx = 0; gbc.fill = GridBagConstraints.NONE;
             JLabel lblHint = new JLabel("Formato: dd/mm/aaaa HH:mm");
-            lblHint.setFont(new Font("Dialog", Font.ITALIC, 14));
+            lblHint.setFont(new Font("Dialog", Font.ITALIC, 21));
             lblHint.setForeground(new Color(130, 130, 130));
             formPanel.add(lblHint, gbc);
 
@@ -501,10 +501,10 @@ public class VueloGestionPanel extends JPanel {
             buttonPanel.setBackground(new Color(245, 247, 250));
             buttonPanel.setBorder(BorderFactory.createMatteBorder(1, 0, 0, 0, new Color(220, 220, 220)));
             JButton btnCancelar = SwingUtils.createStyledButton("Cerrar", new Color(149, 165, 166), COLOR_WHITE);
-            btnCancelar.setPreferredSize(new Dimension(140, 46));
+            btnCancelar.setPreferredSize(new Dimension(210, 69));
             btnCancelar.addActionListener(e -> dispose());
             JButton btnGuardar = SwingUtils.createStyledButton("Guardar Cambios", COLOR_GREEN, COLOR_WHITE);
-            btnGuardar.setPreferredSize(new Dimension(185, 46));
+            btnGuardar.setPreferredSize(new Dimension(278, 69));
             btnGuardar.addActionListener(e -> guardarVuelo(existingVuelo));
             buttonPanel.add(btnCancelar);
             buttonPanel.add(btnGuardar);

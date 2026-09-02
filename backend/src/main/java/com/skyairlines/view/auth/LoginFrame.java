@@ -29,8 +29,8 @@ public class LoginFrame extends JFrame {
 
     public LoginFrame() {
         setTitle("Sky Airlines Peru - Inicio de Sesion");
-        setSize(650, 750);
-        setMinimumSize(new Dimension(550, 650));
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setMinimumSize(new Dimension(800, 700));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(true);
         getContentPane().setBackground(WHITE);
@@ -43,17 +43,17 @@ public class LoginFrame extends JFrame {
         cardPanel.setBackground(WHITE);
         cardPanel.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createLineBorder(new Color(220, 220, 220), 1, true),
-                BorderFactory.createEmptyBorder(50, 60, 50, 60)
+                BorderFactory.createEmptyBorder(75, 90, 75, 90)
         ));
-        cardPanel.setMaximumSize(new Dimension(520, 650));
+        cardPanel.setMaximumSize(new Dimension(780, 975));
 
         JPanel formPanel = new JPanel();
         formPanel.setLayout(new BoxLayout(formPanel, BoxLayout.Y_AXIS));
         formPanel.setBackground(WHITE);
-        formPanel.setMaximumSize(new Dimension(420, Integer.MAX_VALUE));
+        formPanel.setMaximumSize(new Dimension(630, Integer.MAX_VALUE));
 
         JLabel logoLabel = new JLabel("SKY AIRLINES");
-        logoLabel.setFont(new Font("Dialog", Font.BOLD, 38));
+        logoLabel.setFont(new Font("Dialog", Font.BOLD, 57));
         logoLabel.setForeground(DARK_BLUE);
         logoLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         formPanel.add(logoLabel);
@@ -61,12 +61,12 @@ public class LoginFrame extends JFrame {
         formPanel.add(Box.createRigidArea(new Dimension(0, 5)));
 
         JLabel subtitleLabel = new JLabel("Sistema de Gestion Administrativa v2.4.1");
-        subtitleLabel.setFont(new Font("Dialog", Font.PLAIN, 15));
+        subtitleLabel.setFont(new Font("Dialog", Font.PLAIN, 22));
         subtitleLabel.setForeground(GRAY_TEXT);
         subtitleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         formPanel.add(subtitleLabel);
 
-        formPanel.add(Box.createRigidArea(new Dimension(0, 38)));
+        formPanel.add(Box.createRigidArea(new Dimension(0, 57)));
 
         JSeparator separator1 = new JSeparator();
         separator1.setMaximumSize(new Dimension(Integer.MAX_VALUE, 1));
@@ -76,47 +76,47 @@ public class LoginFrame extends JFrame {
         formPanel.add(Box.createRigidArea(new Dimension(0, 25)));
 
         JLabel emailLabel = new JLabel("Ingrese su email");
-        emailLabel.setFont(new Font("Dialog", Font.PLAIN, 16));
+        emailLabel.setFont(new Font("Dialog", Font.PLAIN, 24));
         emailLabel.setForeground(GRAY_TEXT);
         emailLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         formPanel.add(emailLabel);
 
-        formPanel.add(Box.createRigidArea(new Dimension(0, 8)));
+        formPanel.add(Box.createRigidArea(new Dimension(0, 12)));
 
         emailField = new JTextField();
-        emailField.setFont(new Font("Dialog", Font.PLAIN, 17));
+        emailField.setFont(new Font("Dialog", Font.PLAIN, 25));
         emailField.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createLineBorder(BORDER_COLOR, 1),
-                BorderFactory.createEmptyBorder(12, 15, 12, 18)
+                BorderFactory.createEmptyBorder(18, 22, 18, 27)
         ));
-        emailField.setMaximumSize(new Dimension(Integer.MAX_VALUE, 52));
+        emailField.setMaximumSize(new Dimension(Integer.MAX_VALUE, 78));
         emailField.setAlignmentX(Component.CENTER_ALIGNMENT);
         formPanel.add(emailField);
 
-        formPanel.add(Box.createRigidArea(new Dimension(0, 25)));
+        formPanel.add(Box.createRigidArea(new Dimension(0, 37)));
 
         JLabel passwordLabel = new JLabel("Ingrese su contrasena");
-        passwordLabel.setFont(new Font("Dialog", Font.PLAIN, 16));
+        passwordLabel.setFont(new Font("Dialog", Font.PLAIN, 24));
         passwordLabel.setForeground(GRAY_TEXT);
         passwordLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         formPanel.add(passwordLabel);
 
-        formPanel.add(Box.createRigidArea(new Dimension(0, 8)));
+        formPanel.add(Box.createRigidArea(new Dimension(0, 12)));
 
         passwordField = new JPasswordField();
-        passwordField.setFont(new Font("Dialog", Font.PLAIN, 17));
+        passwordField.setFont(new Font("Dialog", Font.PLAIN, 25));
         passwordField.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createLineBorder(BORDER_COLOR, 1),
-                BorderFactory.createEmptyBorder(12, 15, 12, 18)
+                BorderFactory.createEmptyBorder(18, 22, 18, 27)
         ));
-        passwordField.setMaximumSize(new Dimension(Integer.MAX_VALUE, 52));
+        passwordField.setMaximumSize(new Dimension(Integer.MAX_VALUE, 78));
         passwordField.setAlignmentX(Component.CENTER_ALIGNMENT);
         formPanel.add(passwordField);
 
-        formPanel.add(Box.createRigidArea(new Dimension(0, 35)));
+        formPanel.add(Box.createRigidArea(new Dimension(0, 52)));
 
         loginButton = new JButton("Iniciar Sesion");
-        loginButton.setFont(new Font("Dialog", Font.BOLD, 18));
+        loginButton.setFont(new Font("Dialog", Font.BOLD, 27));
         loginButton.setBackground(DARK_BLUE);
         loginButton.setForeground(WHITE);
         loginButton.setFocusPainted(false);
@@ -124,22 +124,22 @@ public class LoginFrame extends JFrame {
         loginButton.setOpaque(true);
         loginButton.setAlignmentX(Component.CENTER_ALIGNMENT);
         loginButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        loginButton.setPreferredSize(new Dimension(420, 54));
-        loginButton.setMaximumSize(new Dimension(420, 54));
+        loginButton.setPreferredSize(new Dimension(630, 81));
+        loginButton.setMaximumSize(new Dimension(630, 81));
         loginButton.addActionListener(e -> performLogin());
         formPanel.add(loginButton);
 
-        formPanel.add(Box.createRigidArea(new Dimension(0, 38)));
+        formPanel.add(Box.createRigidArea(new Dimension(0, 57)));
 
         JSeparator separator2 = new JSeparator();
         separator2.setMaximumSize(new Dimension(Integer.MAX_VALUE, 1));
         separator2.setForeground(new Color(220, 220, 220));
         formPanel.add(separator2);
 
-        formPanel.add(Box.createRigidArea(new Dimension(0, 22)));
+        formPanel.add(Box.createRigidArea(new Dimension(0, 33)));
 
         JLabel footerLabel = new JLabel("Solo para personal autorizado de SkyAirline v2.4.1");
-        footerLabel.setFont(new Font("Dialog", Font.ITALIC, 14));
+        footerLabel.setFont(new Font("Dialog", Font.ITALIC, 21));
         footerLabel.setForeground(GRAY_TEXT);
         footerLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         formPanel.add(footerLabel);

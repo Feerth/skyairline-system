@@ -15,7 +15,7 @@ public class Main {
             UIManager.put("Button.arc", 5);
             UIManager.put("Component.arc", 5);
             UIManager.put("TextComponent.arc", 5);
-            UIManager.put("defaultFont", new Font("Dialog", Font.PLAIN, 22));
+            UIManager.put("defaultFont", new Font("Dialog", Font.PLAIN, 27));
             FlatLightLaf.setup();
             UIManager.setLookAndFeel(new FlatLightLaf());
         } catch (Exception e) {

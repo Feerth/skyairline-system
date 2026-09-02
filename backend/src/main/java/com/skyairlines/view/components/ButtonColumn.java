@@ -26,7 +26,7 @@ public class ButtonColumn extends MouseAdapter {
         this.column = column;
 
         renderButton = new JButton("Ver Detalles");
-        renderButton.setFont(new Font("Dialog", Font.BOLD, 15));
+        renderButton.setFont(new Font("Dialog", Font.BOLD, 22));
         renderButton.setForeground(BUTTON_FG);
         renderButton.setBackground(BUTTON_BG);
         renderButton.setFocusPainted(false);
@@ -36,7 +36,7 @@ public class ButtonColumn extends MouseAdapter {
         renderButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         renderButton.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createLineBorder(BUTTON_FG, 1),
-                BorderFactory.createEmptyBorder(4, 12, 4, 15)
+                BorderFactory.createEmptyBorder(4, 12, 4, 22)
         ));
 
         table.getColumnModel().getColumn(column).setCellRenderer(new ButtonRenderer());
