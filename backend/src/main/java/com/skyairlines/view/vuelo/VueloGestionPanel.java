@@ -386,83 +386,94 @@ public class VueloGestionPanel extends JPanel {
 
         public VueloDialog(JFrame owner, String title, Vuelo existingVuelo) {
             super(owner, title, true);
-            setSize(450, 400);
+            setSize(550, 520);
+            setMinimumSize(new Dimension(500, 480));
             setLocationRelativeTo(owner);
-            setResizable(false);
+            setResizable(true);
 
-            JPanel contentPanel = new JPanel(new GridBagLayout());
-            contentPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
-            contentPanel.setBackground(COLOR_WHITE);
+            JPanel formPanel = new JPanel(new GridBagLayout());
+            formPanel.setBackground(COLOR_WHITE);
+            formPanel.setBorder(BorderFactory.createEmptyBorder(20, 25, 15, 25));
             GridBagConstraints gbc = new GridBagConstraints();
-            gbc.insets = new Insets(8, 8, 8, 8);
-            gbc.fill = GridBagConstraints.HORIZONTAL;
+            gbc.insets = new Insets(10, 10, 10, 10);
             gbc.anchor = GridBagConstraints.WEST;
 
             int row = 0;
 
             gbc.gridx = 0; gbc.gridy = row;
-            JLabel lblCodigo = new JLabel("C\u00f3digo Vuelo:");
+            gbc.weightx = 0; gbc.fill = GridBagConstraints.NONE;
+            JLabel lblCodigo = new JLabel("Codigo de Vuelo:");
             lblCodigo.setFont(new Font("Segoe UI", Font.BOLD, 13));
-            contentPanel.add(lblCodigo, gbc);
-            codigoField = new JTextField(15);
+            formPanel.add(lblCodigo, gbc);
+            codigoField = new JTextField(20);
             codigoField.setFont(new Font("Segoe UI", Font.PLAIN, 13));
             if (existingVuelo != null) codigoField.setText(existingVuelo.getCodigoVuelo());
             gbc.gridx = 1; gbc.gridy = row;
-            contentPanel.add(codigoField, gbc);
+            gbc.weightx = 1; gbc.fill = GridBagConstraints.HORIZONTAL;
+            formPanel.add(codigoField, gbc);
             row++;
 
             gbc.gridx = 0; gbc.gridy = row;
+            gbc.weightx = 0; gbc.fill = GridBagConstraints.NONE;
             JLabel lblRuta = new JLabel("Ruta:");
             lblRuta.setFont(new Font("Segoe UI", Font.BOLD, 13));
-            contentPanel.add(lblRuta, gbc);
+            formPanel.add(lblRuta, gbc);
             rutaCombo = new JComboBox<>();
             rutaCombo.setFont(new Font("Segoe UI", Font.PLAIN, 13));
             gbc.gridx = 1; gbc.gridy = row;
-            contentPanel.add(rutaCombo, gbc);
+            gbc.weightx = 1; gbc.fill = GridBagConstraints.HORIZONTAL;
+            formPanel.add(rutaCombo, gbc);
             row++;
 
             gbc.gridx = 0; gbc.gridy = row;
+            gbc.weightx = 0; gbc.fill = GridBagConstraints.NONE;
             JLabel lblAeronave = new JLabel("Aeronave:");
             lblAeronave.setFont(new Font("Segoe UI", Font.BOLD, 13));
-            contentPanel.add(lblAeronave, gbc);
+            formPanel.add(lblAeronave, gbc);
             aeronaveCombo = new JComboBox<>();
             aeronaveCombo.setFont(new Font("Segoe UI", Font.PLAIN, 13));
             gbc.gridx = 1; gbc.gridy = row;
-            contentPanel.add(aeronaveCombo, gbc);
+            gbc.weightx = 1; gbc.fill = GridBagConstraints.HORIZONTAL;
+            formPanel.add(aeronaveCombo, gbc);
             row++;
 
             gbc.gridx = 0; gbc.gridy = row;
-            JLabel lblFechaSalida = new JLabel("Fecha Salida:");
+            gbc.weightx = 0; gbc.fill = GridBagConstraints.NONE;
+            JLabel lblFechaSalida = new JLabel("Fecha/Hora Salida:");
             lblFechaSalida.setFont(new Font("Segoe UI", Font.BOLD, 13));
-            contentPanel.add(lblFechaSalida, gbc);
-            fechaSalidaField = new JTextField(15);
+            formPanel.add(lblFechaSalida, gbc);
+            fechaSalidaField = new JTextField(20);
             fechaSalidaField.setFont(new Font("Segoe UI", Font.PLAIN, 13));
             fechaSalidaField.setToolTipText("dd/mm/aaaa HH:mm");
             if (existingVuelo != null && existingVuelo.getFechaSalidaProgramada() != null) {
                 fechaSalidaField.setText(DateUtils.formatDateTime(existingVuelo.getFechaSalidaProgramada()));
             }
             gbc.gridx = 1; gbc.gridy = row;
-            contentPanel.add(fechaSalidaField, gbc);
+            gbc.weightx = 1; gbc.fill = GridBagConstraints.HORIZONTAL;
+            formPanel.add(fechaSalidaField, gbc);
             row++;
 
             gbc.gridx = 0; gbc.gridy = row;
-            JLabel lblFechaLlegada = new JLabel("Fecha Llegada:");
+            gbc.weightx = 0; gbc.fill = GridBagConstraints.NONE;
+            JLabel lblFechaLlegada = new JLabel("Fecha/Hora Llegada:");
             lblFechaLlegada.setFont(new Font("Segoe UI", Font.BOLD, 13));
-            contentPanel.add(lblFechaLlegada, gbc);
-            fechaLlegadaField = new JTextField(15);
+            formPanel.add(lblFechaLlegada, gbc);
+            fechaLlegadaField = new JTextField(20);
             fechaLlegadaField.setFont(new Font("Segoe UI", Font.PLAIN, 13));
             fechaLlegadaField.setToolTipText("dd/mm/aaaa HH:mm");
             if (existingVuelo != null && existingVuelo.getFechaLlegadaProgramada() != null) {
                 fechaLlegadaField.setText(DateUtils.formatDateTime(existingVuelo.getFechaLlegadaProgramada()));
             }
             gbc.gridx = 1; gbc.gridy = row;
-            contentPanel.add(fechaLlegadaField, gbc);
+            gbc.weightx = 1; gbc.fill = GridBagConstraints.HORIZONTAL;
+            formPanel.add(fechaLlegadaField, gbc);
             row++;
 
             gbc.gridx = 0; gbc.gridy = row;
+            gbc.weightx = 0; gbc.fill = GridBagConstraints.NONE;
             JLabel lblEstado = new JLabel("Estado:");
             lblEstado.setFont(new Font("Segoe UI", Font.BOLD, 13));
-            contentPanel.add(lblEstado, gbc);
+            formPanel.add(lblEstado, gbc);
             estadoCombo = new JComboBox<>(new String[]{
                     "PROGRAMADO", "EMBARCANDO", "EN_VUELO", "COMPLETADO", "CANCELADO", "RETRASADO"
             });
@@ -471,26 +482,39 @@ public class VueloGestionPanel extends JPanel {
                 estadoCombo.setSelectedItem(existingVuelo.getEstado());
             }
             gbc.gridx = 1; gbc.gridy = row;
-            contentPanel.add(estadoCombo, gbc);
+            gbc.weightx = 1; gbc.fill = GridBagConstraints.HORIZONTAL;
+            formPanel.add(estadoCombo, gbc);
             row++;
 
-            JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-            buttonPanel.setBackground(COLOR_WHITE);
-            JButton btnCancelar = SwingUtils.createStyledButton("Cancelar", new Color(149, 165, 166), COLOR_WHITE);
-            btnCancelar.setPreferredSize(new Dimension(100, 35));
+            gbc.gridx = 0; gbc.gridy = row;
+            gbc.weightx = 0; gbc.fill = GridBagConstraints.NONE;
+            JLabel lblHint = new JLabel("Formato: dd/mm/aaaa HH:mm");
+            lblHint.setFont(new Font("Segoe UI", Font.ITALIC, 11));
+            lblHint.setForeground(new Color(130, 130, 130));
+            formPanel.add(lblHint, gbc);
+
+            JScrollPane scrollPane = new JScrollPane(formPanel);
+            scrollPane.setBorder(BorderFactory.createEmptyBorder());
+            scrollPane.getVerticalScrollBar().setUnitIncrement(16);
+
+            JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 10, 10));
+            buttonPanel.setBackground(new Color(245, 247, 250));
+            buttonPanel.setBorder(BorderFactory.createMatteBorder(1, 0, 0, 0, new Color(220, 220, 220)));
+            JButton btnCancelar = SwingUtils.createStyledButton("Cerrar", new Color(149, 165, 166), COLOR_WHITE);
+            btnCancelar.setPreferredSize(new Dimension(110, 38));
             btnCancelar.addActionListener(e -> dispose());
-            JButton btnGuardar = SwingUtils.createStyledButton("Guardar", COLOR_GREEN, COLOR_WHITE);
-            btnGuardar.setPreferredSize(new Dimension(100, 35));
+            JButton btnGuardar = SwingUtils.createStyledButton("Guardar Cambios", COLOR_GREEN, COLOR_WHITE);
+            btnGuardar.setPreferredSize(new Dimension(150, 38));
             btnGuardar.addActionListener(e -> guardarVuelo(existingVuelo));
             buttonPanel.add(btnCancelar);
             buttonPanel.add(btnGuardar);
 
-            gbc.gridx = 0; gbc.gridy = row;
-            gbc.gridwidth = 2;
-            gbc.anchor = GridBagConstraints.EAST;
-            contentPanel.add(buttonPanel, gbc);
+            JPanel mainPanel = new JPanel(new BorderLayout());
+            mainPanel.setBackground(COLOR_WHITE);
+            mainPanel.add(scrollPane, BorderLayout.CENTER);
+            mainPanel.add(buttonPanel, BorderLayout.SOUTH);
 
-            setContentPane(contentPanel);
+            setContentPane(mainPanel);
 
             loadRutasAeronaves(existingVuelo);
         }
@@ -504,7 +528,7 @@ public class VueloGestionPanel extends JPanel {
                 protected Void doInBackground() throws Exception {
                     RutaDAOImpl rutaDAO = new RutaDAOImpl();
                     AeronaveDAOImpl aeronaveDAO = new AeronaveDAOImpl();
-                    rutas = rutaDAO.findAll();
+                    rutas = rutaDAO.findAllWithAeropuertos();
                     aeronaves = aeronaveDAO.findAll();
                     return null;
                 }
@@ -544,10 +568,26 @@ public class VueloGestionPanel extends JPanel {
             worker.execute();
         }
 
+        private OffsetDateTime parseFecha(String texto, String nombreCampo) throws Exception {
+            if (texto == null || texto.trim().isEmpty()) {
+                return null;
+            }
+            String[] parts = texto.trim().split(" ");
+            String[] dateParts = parts[0].split("/");
+            String[] timeParts = parts.length > 1 ? parts[1].split(":") : new String[]{"00", "00"};
+            int day = Integer.parseInt(dateParts[0]);
+            int month = Integer.parseInt(dateParts[1]);
+            int year = Integer.parseInt(dateParts[2]);
+            int hour = Integer.parseInt(timeParts[0]);
+            int min = Integer.parseInt(timeParts[1]);
+            return java.time.LocalDateTime.of(year, month, day, hour, min)
+                    .atOffset(ZoneId.systemDefault().getRules().getOffset(java.time.Instant.now()));
+        }
+
         private void guardarVuelo(Vuelo existingVuelo) {
             String codigo = codigoField.getText().trim();
             if (codigo.isEmpty()) {
-                SwingUtils.showWarningDialog(this, "Advertencia", "El c\u00f3digo de vuelo es obligatorio.");
+                SwingUtils.showWarningDialog(this, "Advertencia", "El codigo de vuelo es obligatorio.");
                 return;
             }
 
@@ -559,43 +599,31 @@ public class VueloGestionPanel extends JPanel {
                 return;
             }
 
-            OffsetDateTime fechaSalida = null;
-            OffsetDateTime fechaLlegada = null;
+            OffsetDateTime fechaSalida;
+            OffsetDateTime fechaLlegada;
             try {
-                String fsText = fechaSalidaField.getText().trim();
-                if (!fsText.isEmpty()) {
-                    String[] parts = fsText.split(" ");
-                    String[] dateParts = parts[0].split("/");
-                    String[] timeParts = parts.length > 1 ? parts[1].split(":") : new String[]{"00", "00"};
-                    int day = Integer.parseInt(dateParts[0]);
-                    int month = Integer.parseInt(dateParts[1]);
-                    int year = Integer.parseInt(dateParts[2]);
-                    int hour = Integer.parseInt(timeParts[0]);
-                    int min = Integer.parseInt(timeParts[1]);
-                    fechaSalida = java.time.LocalDateTime.of(year, month, day, hour, min)
-                            .atOffset(ZoneId.systemDefault().getRules().getOffset(java.time.Instant.now()));
-                }
+                fechaSalida = parseFecha(fechaSalidaField.getText(), "Salida");
             } catch (Exception e) {
-                SwingUtils.showWarningDialog(this, "Advertencia", "Fecha de salida inv\u00e1lida. Use dd/mm/aaaa HH:mm");
+                SwingUtils.showWarningDialog(this, "Advertencia", "Fecha de salida invalida. Use dd/mm/aaaa HH:mm");
+                return;
+            }
+            try {
+                fechaLlegada = parseFecha(fechaLlegadaField.getText(), "Llegada");
+            } catch (Exception e) {
+                SwingUtils.showWarningDialog(this, "Advertencia", "Fecha de llegada invalida. Use dd/mm/aaaa HH:mm");
                 return;
             }
 
-            try {
-                String flText = fechaLlegadaField.getText().trim();
-                if (!flText.isEmpty()) {
-                    String[] parts = flText.split(" ");
-                    String[] dateParts = parts[0].split("/");
-                    String[] timeParts = parts.length > 1 ? parts[1].split(":") : new String[]{"00", "00"};
-                    int day = Integer.parseInt(dateParts[0]);
-                    int month = Integer.parseInt(dateParts[1]);
-                    int year = Integer.parseInt(dateParts[2]);
-                    int hour = Integer.parseInt(timeParts[0]);
-                    int min = Integer.parseInt(timeParts[1]);
-                    fechaLlegada = java.time.LocalDateTime.of(year, month, day, hour, min)
-                            .atOffset(ZoneId.systemDefault().getRules().getOffset(java.time.Instant.now()));
-                }
-            } catch (Exception e) {
-                SwingUtils.showWarningDialog(this, "Advertencia", "Fecha de llegada inv\u00e1lida. Use dd/mm/aaaa HH:mm");
+            if (fechaSalida == null) {
+                SwingUtils.showWarningDialog(this, "Advertencia", "La fecha de salida es obligatoria.");
+                return;
+            }
+            if (fechaLlegada == null) {
+                SwingUtils.showWarningDialog(this, "Advertencia", "La fecha de llegada es obligatoria.");
+                return;
+            }
+            if (fechaLlegada.isBefore(fechaSalida) || fechaLlegada.isEqual(fechaSalida)) {
+                SwingUtils.showWarningDialog(this, "Advertencia", "La fecha de llegada debe ser posterior a la de salida.");
                 return;
             }
 
@@ -635,7 +663,7 @@ public class VueloGestionPanel extends JPanel {
                         Vuelo result = get();
                         if (result != null) {
                             approved = true;
-                            SwingUtils.showInfoDialog(VueloDialog.this, "Éxito",
+                            SwingUtils.showInfoDialog(VueloDialog.this, "\u00c9xito",
                                     existingVuelo != null ? "Vuelo actualizado correctamente." : "Vuelo creado correctamente.");
                             dispose();
                         }

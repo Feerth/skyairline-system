@@ -73,12 +73,6 @@ public class Aeronave {
 
     @Override
     public String toString() {
-        return "Aeronave{" +
-                "id=" + id +
-                ", matricula='" + matricula + '\'' +
-                ", modelo='" + modelo + '\'' +
-                ", capacidadPasajeros=" + capacidadPasajeros +
-                ", estado='" + estado + '\'' +
-                '}';
+        return (modelo != null ? modelo : "N/A") + " - " + (matricula != null ? matricula : "N/A");
     }
 }

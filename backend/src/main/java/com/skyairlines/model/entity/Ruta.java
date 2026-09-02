@@ -92,12 +92,6 @@ public class Ruta {
 
     @Override
     public String toString() {
-        return "Ruta{" +
-                "id=" + id +
-                ", codigoRuta='" + codigoRuta + '\'' +
-                ", idAeropuertoOrigen=" + idAeropuertoOrigen +
-                ", idAeropuertoDestino=" + idAeropuertoDestino +
-                ", duracionEstimadaMin=" + duracionEstimadaMin +
-                '}';
+        return codigoRuta != null ? codigoRuta : "Ruta#" + id;
     }
 }
