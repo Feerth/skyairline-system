@@ -18,8 +18,8 @@ public class SideNavigationPanel extends JPanel {
     private static final Color ACCENT = new Color(0, 102, 204);
     private static final Color WHITE = Color.WHITE;
     private static final Color TEXT_SECONDARY = new Color(150, 170, 190);
-    private static final int BUTTON_WIDTH = 220;
-    private static final int BUTTON_HEIGHT = 50;
+    private static final int BUTTON_WIDTH = 260;
+    private static final int BUTTON_HEIGHT = 60;
 
     private final NavigationListener listener;
     private final Map<String, JButton> buttonMap = new LinkedHashMap<>();
@@ -39,12 +39,12 @@ public class SideNavigationPanel extends JPanel {
     private void buildUI() {
         JPanel logoPanel = new JPanel(new GridBagLayout());
         logoPanel.setBackground(NAVY);
-        logoPanel.setPreferredSize(new Dimension(BUTTON_WIDTH, 70));
-        logoPanel.setMaximumSize(new Dimension(BUTTON_WIDTH, 70));
+        logoPanel.setPreferredSize(new Dimension(BUTTON_WIDTH, 85));
+        logoPanel.setMaximumSize(new Dimension(BUTTON_WIDTH, 85));
 
         JLabel logoLabel = new JLabel("SKY AIRLINES");
         logoLabel.setForeground(WHITE);
-        logoLabel.setFont(new Font("Segoe UI", Font.BOLD, 18));
+        logoLabel.setFont(new Font("Dialog", Font.BOLD, 22));
         logoLabel.setHorizontalAlignment(SwingConstants.CENTER);
         logoPanel.add(logoLabel);
 
@@ -78,11 +78,11 @@ public class SideNavigationPanel extends JPanel {
 
         JPanel footerPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         footerPanel.setBackground(NAVY);
-        footerPanel.setPreferredSize(new Dimension(BUTTON_WIDTH, 40));
-        footerPanel.setMaximumSize(new Dimension(BUTTON_WIDTH, 40));
+        footerPanel.setPreferredSize(new Dimension(BUTTON_WIDTH, 50));
+        footerPanel.setMaximumSize(new Dimension(BUTTON_WIDTH, 50));
         JLabel footerLabel = new JLabel("v2.4.1");
         footerLabel.setForeground(TEXT_SECONDARY);
-        footerLabel.setFont(new Font("Segoe UI", Font.PLAIN, 11));
+        footerLabel.setFont(new Font("Dialog", Font.PLAIN, 14));
         footerPanel.add(footerLabel);
         add(footerPanel);
     }
@@ -95,7 +95,7 @@ public class SideNavigationPanel extends JPanel {
         button.setMinimumSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
         button.setBackground(NAVY);
         button.setForeground(WHITE);
-        button.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+        button.setFont(new Font("Dialog", Font.PLAIN, 18));
         button.setFocusPainted(false);
         button.setBorderPainted(false);
         button.setOpaque(true);
@@ -125,13 +125,13 @@ public class SideNavigationPanel extends JPanel {
     public void setActiveButton(String panel) {
         if (activeButton != null) {
             activeButton.setBackground(NAVY);
-            activeButton.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+            activeButton.setFont(new Font("Dialog", Font.PLAIN, 18));
         }
 
         JButton newActive = buttonMap.get(panel);
         if (newActive != null) {
             newActive.setBackground(ACCENT);
-            newActive.setFont(new Font("Segoe UI", Font.BOLD, 15));
+            newActive.setFont(new Font("Dialog", Font.BOLD, 18));
             activeButton = newActive;
         }
     }

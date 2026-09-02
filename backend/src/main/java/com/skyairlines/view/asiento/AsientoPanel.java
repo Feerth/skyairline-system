@@ -48,19 +48,19 @@ public class AsientoPanel extends JPanel {
         topBar.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, COLOR_BORDER));
 
         JButton btnVolver = new JButton("\u2190 Volver a Detalles");
-        btnVolver.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        btnVolver.setFont(new Font("Dialog", Font.BOLD, 17));
         btnVolver.setForeground(COLOR_BLUE);
         btnVolver.setBackground(COLOR_WHITE);
         btnVolver.setFocusPainted(false);
         btnVolver.setBorderPainted(true);
         btnVolver.setBorder(BorderFactory.createLineBorder(COLOR_BLUE, 1));
         btnVolver.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnVolver.setPreferredSize(new Dimension(180, 35));
+        btnVolver.setPreferredSize(new Dimension(220, 42));
         btnVolver.addActionListener(e -> mainFrame.showVueloDetalle(vueloId));
         topBar.add(btnVolver);
 
         JLabel title = new JLabel("Gesti\u00f3n de Asientos - Vuelo #" + vueloId);
-        title.setFont(new Font("Segoe UI", Font.BOLD, 18));
+        title.setFont(new Font("Dialog", Font.BOLD, 22));
         title.setForeground(COLOR_DARK);
         topBar.add(title);
 
@@ -96,26 +96,26 @@ public class AsientoPanel extends JPanel {
         rightPanel.setBackground(COLOR_LIGHT_BG);
         rightPanel.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createMatteBorder(0, 1, 0, 0, COLOR_BORDER),
-                BorderFactory.createEmptyBorder(15, 15, 15, 15)
+                BorderFactory.createEmptyBorder(15, 15, 15, 18)
         ));
-        rightPanel.setPreferredSize(new Dimension(260, 0));
+        rightPanel.setPreferredSize(new Dimension(330, 0));
 
         JLabel simTitle = new JLabel("Simulaci\u00f3n");
-        simTitle.setFont(new Font("Segoe UI", Font.BOLD, 15));
+        simTitle.setFont(new Font("Dialog", Font.BOLD, 18));
         simTitle.setForeground(COLOR_DARK);
         simTitle.setAlignmentX(Component.LEFT_ALIGNMENT);
         rightPanel.add(simTitle);
         rightPanel.add(Box.createVerticalStrut(15));
 
         btnSimularCancelacion = new JButton("Simular Cancelacion");
-        btnSimularCancelacion.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        btnSimularCancelacion.setFont(new Font("Dialog", Font.BOLD, 17));
         btnSimularCancelacion.setForeground(COLOR_WHITE);
         btnSimularCancelacion.setBackground(COLOR_RED);
         btnSimularCancelacion.setFocusPainted(false);
         btnSimularCancelacion.setBorderPainted(false);
         btnSimularCancelacion.setOpaque(true);
         btnSimularCancelacion.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnSimularCancelacion.setMaximumSize(new Dimension(230, 45));
+        btnSimularCancelacion.setMaximumSize(new Dimension(290, 52));
         btnSimularCancelacion.setAlignmentX(Component.LEFT_ALIGNMENT);
         btnSimularCancelacion.addActionListener(e -> simularCancelacion());
         rightPanel.add(btnSimularCancelacion);
@@ -127,10 +127,10 @@ public class AsientoPanel extends JPanel {
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 15, 10));
         bottomPanel.setBackground(COLOR_LIGHT_BG);
         bottomPanel.setBorder(BorderFactory.createMatteBorder(1, 0, 0, 0, COLOR_BORDER));
-        bottomPanel.setPreferredSize(new Dimension(0, 50));
+        bottomPanel.setPreferredSize(new Dimension(0, 72));
 
         statusLabel = new JLabel("Capacidad: --- | Vendidos: --- | Disponibles: ---");
-        statusLabel.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        statusLabel.setFont(new Font("Dialog", Font.PLAIN, 17));
         statusLabel.setForeground(new Color(80, 80, 80));
         bottomPanel.add(statusLabel);
 

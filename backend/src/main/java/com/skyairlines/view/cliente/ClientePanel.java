@@ -20,7 +20,7 @@ import java.util.List;
 public class ClientePanel extends JPanel {
 
     private static final Color COLOR_GREEN = new Color(39, 174, 96);
-    private static final Color COLOR_RED = new Color(231, 76, 60);
+    private static final Color COLOR_RED = new Color(231, 76, 72);
     private static final Color COLOR_BLUE = new Color(52, 152, 219);
     private static final Color COLOR_ORANGE = new Color(230, 126, 34);
     private static final Color COLOR_DARK = new Color(44, 62, 80);
@@ -51,7 +51,7 @@ public class ClientePanel extends JPanel {
         topBar.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(220, 220, 220)));
 
         JLabel title = new JLabel("Gestion de Clientes");
-        title.setFont(new Font("Segoe UI", Font.BOLD, 18));
+        title.setFont(new Font("Dialog", Font.BOLD, 22));
         title.setForeground(COLOR_DARK);
         topBar.add(title);
 
@@ -64,13 +64,13 @@ public class ClientePanel extends JPanel {
         searchPanel.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(230, 230, 230)));
 
         JLabel searchLabel = new JLabel("Buscar:");
-        searchLabel.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        searchLabel.setFont(new Font("Dialog", Font.PLAIN, 16));
         searchLabel.setForeground(new Color(100, 100, 100));
         searchPanel.add(searchLabel);
 
         searchField = new JTextField();
-        searchField.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-        searchField.setPreferredSize(new Dimension(300, 30));
+        searchField.setFont(new Font("Dialog", Font.PLAIN, 17));
+        searchField.setPreferredSize(new Dimension(300, 38));
         searchField.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createLineBorder(new Color(180, 180, 180)),
                 BorderFactory.createEmptyBorder(5, 8, 5, 8)
@@ -110,23 +110,23 @@ public class ClientePanel extends JPanel {
         buttonPanel.setBorder(BorderFactory.createMatteBorder(1, 0, 0, 0, new Color(220, 220, 220)));
 
         JButton btnCrear = SwingUtils.createStyledButton("+ Crear", COLOR_GREEN, COLOR_WHITE);
-        btnCrear.setPreferredSize(new Dimension(130, 38));
+        btnCrear.setPreferredSize(new Dimension(165, 46));
         btnCrear.addActionListener(e -> showCrearDialog());
 
         JButton btnEditar = SwingUtils.createStyledButton("Editar", COLOR_BLUE, COLOR_WHITE);
-        btnEditar.setPreferredSize(new Dimension(130, 38));
+        btnEditar.setPreferredSize(new Dimension(165, 46));
         btnEditar.addActionListener(e -> showEditarDialog());
 
         JButton btnEliminar = SwingUtils.createStyledButton("Eliminar", COLOR_RED, COLOR_WHITE);
-        btnEliminar.setPreferredSize(new Dimension(130, 38));
+        btnEliminar.setPreferredSize(new Dimension(165, 46));
         btnEliminar.addActionListener(e -> eliminarCliente());
 
         JButton btnActualizar = SwingUtils.createStyledButton("Actualizar", COLOR_ORANGE, COLOR_WHITE);
-        btnActualizar.setPreferredSize(new Dimension(150, 38));
+        btnActualizar.setPreferredSize(new Dimension(185, 46));
         btnActualizar.addActionListener(e -> loadData());
 
         statusLabel = new JLabel("Total: 0 registros");
-        statusLabel.setFont(new Font("Segoe UI", Font.ITALIC, 12));
+        statusLabel.setFont(new Font("Dialog", Font.ITALIC, 15));
         statusLabel.setForeground(new Color(120, 120, 120));
 
         buttonPanel.add(btnCrear);
@@ -459,12 +459,12 @@ public class ClientePanel extends JPanel {
         public ClienteDialog(Frame owner, String title, Cliente existing, Object[] data) {
             super(owner, title, true);
             this.isEdit = existing != null;
-            setSize(450, 420);
+            setSize(580, 540);
             setLocationRelativeTo(owner);
             setResizable(false);
 
             JPanel mainPanel = new JPanel(new GridBagLayout());
-            mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+            mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 25));
             mainPanel.setBackground(COLOR_WHITE);
             GridBagConstraints gbc = new GridBagConstraints();
             gbc.insets = new Insets(8, 8, 8, 8);
@@ -499,11 +499,11 @@ public class ClientePanel extends JPanel {
             buttonPanel.setOpaque(false);
 
             JButton btnCancelar = SwingUtils.createStyledButton("Cancelar", new Color(149, 165, 166), COLOR_WHITE);
-            btnCancelar.setPreferredSize(new Dimension(110, 35));
+            btnCancelar.setPreferredSize(new Dimension(140, 42));
             btnCancelar.addActionListener(e -> dispose());
 
             JButton btnGuardar = SwingUtils.createStyledButton(isEdit ? "Actualizar" : "Guardar", COLOR_GREEN, COLOR_WHITE);
-            btnGuardar.setPreferredSize(new Dimension(110, 35));
+            btnGuardar.setPreferredSize(new Dimension(140, 42));
             btnGuardar.addActionListener(e -> {
                 if (validateFields()) {
                     accepted = true;
@@ -528,7 +528,7 @@ public class ClientePanel extends JPanel {
             gbc.weightx = 0;
             gbc.gridwidth = 1;
             JLabel lbl = new JLabel(label);
-            lbl.setFont(new Font("Segoe UI", Font.BOLD, 13));
+            lbl.setFont(new Font("Dialog", Font.BOLD, 16));
             lbl.setForeground(COLOR_DARK);
             panel.add(lbl, gbc);
 

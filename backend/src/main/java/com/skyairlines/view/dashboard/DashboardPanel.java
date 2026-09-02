@@ -28,9 +28,9 @@ public class DashboardPanel extends JPanel {
     private static final Color TEXT_GRAY = new Color(120, 120, 120);
     private static final Color BORDER_COLOR = new Color(220, 220, 220);
     private static final Color GREEN = new Color(39, 174, 96);
-    private static final Color ORANGE = new Color(243, 156, 18);
+    private static final Color ORANGE = new Color(243, 156, 22);
     private static final Color PURPLE = new Color(142, 68, 173);
-    private static final Color RED = new Color(231, 76, 60);
+    private static final Color RED = new Color(231, 76, 72);
 
     public DashboardPanel() {
         setLayout(new BorderLayout(0, 0));
@@ -54,16 +54,16 @@ public class DashboardPanel extends JPanel {
 
         JLabel titleLabel = new JLabel("Panel de Control - Resumen Operativo del D\u00eda");
         titleLabel.setForeground(WHITE);
-        titleLabel.setFont(new Font("Segoe UI", Font.BOLD, 20));
+        titleLabel.setFont(new Font("Dialog", Font.BOLD, 25));
         titlePanel.add(titleLabel, BorderLayout.WEST);
 
         add(titlePanel, BorderLayout.NORTH);
 
-        JPanel centerPanel = new JPanel(new BorderLayout(0, 20));
+        JPanel centerPanel = new JPanel(new BorderLayout(0, 25));
         centerPanel.setBackground(LIGHT_BG);
         centerPanel.setBorder(BorderFactory.createEmptyBorder(20, 25, 20, 25));
 
-        JPanel metricsPanel = new JPanel(new GridLayout(2, 2, 20, 20));
+        JPanel metricsPanel = new JPanel(new GridLayout(2, 2, 20, 25));
         metricsPanel.setOpaque(false);
 
         JPanel card1 = createMetricCard("Vuelos Programados Hoy", "0", ACCENT_BLUE);
@@ -89,7 +89,7 @@ public class DashboardPanel extends JPanel {
         alertPanel.setOpaque(false);
 
         JLabel alertTitle = new JLabel("Alertas Operativas del Sistema");
-        alertTitle.setFont(new Font("Segoe UI", Font.BOLD, 16));
+        alertTitle.setFont(new Font("Dialog", Font.BOLD, 19));
         alertTitle.setForeground(TEXT_DARK);
         alertPanel.add(alertTitle, BorderLayout.NORTH);
 
@@ -125,12 +125,12 @@ public class DashboardPanel extends JPanel {
         contentPanel.setBorder(BorderFactory.createEmptyBorder(0, 15, 0, 0));
 
         JLabel valueLabel = new JLabel(value);
-        valueLabel.setFont(new Font("Segoe UI", Font.BOLD, 36));
+        valueLabel.setFont(new Font("Dialog", Font.BOLD, 45));
         valueLabel.setForeground(TEXT_DARK);
         valueLabel.putClientProperty("metricLabel", Boolean.TRUE);
 
         JLabel titleLabel = new JLabel(title);
-        titleLabel.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        titleLabel.setFont(new Font("Dialog", Font.PLAIN, 17));
         titleLabel.setForeground(TEXT_GRAY);
 
         contentPanel.add(valueLabel, BorderLayout.NORTH);
@@ -152,7 +152,7 @@ public class DashboardPanel extends JPanel {
         alertaTable.setShowGrid(true);
         alertaTable.setGridColor(new Color(200, 200, 200));
         alertaTable.setIntercellSpacing(new Dimension(1, 1));
-        alertaTable.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        alertaTable.setFont(new Font("Dialog", Font.PLAIN, 16));
         alertaTable.setSelectionBackground(ACCENT_BLUE);
         alertaTable.setSelectionForeground(WHITE);
         alertaTable.setFillsViewportHeight(true);
@@ -160,17 +160,17 @@ public class DashboardPanel extends JPanel {
         DefaultTableCellRenderer cellRenderer = new DefaultTableCellRenderer();
         cellRenderer.setHorizontalAlignment(SwingConstants.CENTER);
         cellRenderer.setVerticalAlignment(SwingConstants.CENTER);
-        cellRenderer.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        cellRenderer.setFont(new Font("Dialog", Font.PLAIN, 16));
         cellRenderer.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
 
         for (int i = 0; i < alertaTable.getColumnCount(); i++) {
             alertaTable.getColumnModel().getColumn(i).setCellRenderer(cellRenderer);
         }
 
-        alertaTable.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 13));
+        alertaTable.getTableHeader().setFont(new Font("Dialog", Font.BOLD, 16));
         alertaTable.getTableHeader().setBackground(DARK_BLUE);
         alertaTable.getTableHeader().setForeground(WHITE);
-        alertaTable.getTableHeader().setPreferredSize(new Dimension(0, 35));
+        alertaTable.getTableHeader().setPreferredSize(new Dimension(0, 42));
     }
 
     public void refreshData() {

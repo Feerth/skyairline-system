@@ -52,19 +52,19 @@ public class EquipajePanel extends JPanel {
         topBar.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, COLOR_BORDER));
 
         JButton btnVolver = new JButton("\u2190 Volver a Detalles");
-        btnVolver.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        btnVolver.setFont(new Font("Dialog", Font.BOLD, 17));
         btnVolver.setForeground(COLOR_BLUE);
         btnVolver.setBackground(COLOR_WHITE);
         btnVolver.setFocusPainted(false);
         btnVolver.setBorderPainted(true);
         btnVolver.setBorder(BorderFactory.createLineBorder(COLOR_BLUE, 1));
         btnVolver.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnVolver.setPreferredSize(new Dimension(180, 35));
+        btnVolver.setPreferredSize(new Dimension(220, 42));
         btnVolver.addActionListener(e -> mainFrame.showVueloDetalle(vueloId));
         topBar.add(btnVolver);
 
         JLabel title = new JLabel("Administraci\u00f3n de Equipaje - Vuelo #" + vueloId);
-        title.setFont(new Font("Segoe UI", Font.BOLD, 18));
+        title.setFont(new Font("Dialog", Font.BOLD, 22));
         title.setForeground(COLOR_DARK);
         topBar.add(title);
 
@@ -104,41 +104,41 @@ public class EquipajePanel extends JPanel {
         rightPanel.setBackground(COLOR_LIGHT_BG);
         rightPanel.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createMatteBorder(0, 1, 0, 0, COLOR_BORDER),
-                BorderFactory.createEmptyBorder(15, 15, 15, 15)
+                BorderFactory.createEmptyBorder(15, 15, 15, 18)
         ));
-        rightPanel.setPreferredSize(new Dimension(260, 0));
+        rightPanel.setPreferredSize(new Dimension(330, 0));
 
         JLabel transitionTitle = new JLabel("Transici\u00f3n de Estado");
-        transitionTitle.setFont(new Font("Segoe UI", Font.BOLD, 15));
+        transitionTitle.setFont(new Font("Dialog", Font.BOLD, 18));
         transitionTitle.setForeground(COLOR_DARK);
         transitionTitle.setAlignmentX(Component.LEFT_ALIGNMENT);
         rightPanel.add(transitionTitle);
         rightPanel.add(Box.createVerticalStrut(10));
 
         JLabel comboLabel = new JLabel("Nuevo estado:");
-        comboLabel.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        comboLabel.setFont(new Font("Dialog", Font.PLAIN, 16));
         comboLabel.setForeground(new Color(100, 100, 100));
         comboLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
         rightPanel.add(comboLabel);
         rightPanel.add(Box.createVerticalStrut(5));
 
         estadoComboBox = new JComboBox<>();
-        estadoComboBox.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-        estadoComboBox.setMaximumSize(new Dimension(230, 35));
+        estadoComboBox.setFont(new Font("Dialog", Font.PLAIN, 17));
+        estadoComboBox.setMaximumSize(new Dimension(290, 42));
         estadoComboBox.setAlignmentX(Component.LEFT_ALIGNMENT);
         estadoComboBox.setEnabled(false);
         rightPanel.add(estadoComboBox);
         rightPanel.add(Box.createVerticalStrut(15));
 
         btnActualizarEstado = new JButton("Actualizar Estado");
-        btnActualizarEstado.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        btnActualizarEstado.setFont(new Font("Dialog", Font.BOLD, 17));
         btnActualizarEstado.setForeground(COLOR_WHITE);
         btnActualizarEstado.setBackground(new Color(39, 174, 96));
         btnActualizarEstado.setFocusPainted(false);
         btnActualizarEstado.setBorderPainted(false);
         btnActualizarEstado.setOpaque(true);
         btnActualizarEstado.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnActualizarEstado.setMaximumSize(new Dimension(230, 40));
+        btnActualizarEstado.setMaximumSize(new Dimension(290, 48));
         btnActualizarEstado.setAlignmentX(Component.LEFT_ALIGNMENT);
         btnActualizarEstado.setEnabled(false);
         btnActualizarEstado.addActionListener(e -> actualizarEstado());
@@ -146,28 +146,28 @@ public class EquipajePanel extends JPanel {
         rightPanel.add(Box.createVerticalStrut(25));
 
         JSeparator separator = new JSeparator();
-        separator.setMaximumSize(new Dimension(230, 1));
+        separator.setMaximumSize(new Dimension(290, 1));
         separator.setForeground(COLOR_BORDER);
         separator.setAlignmentX(Component.LEFT_ALIGNMENT);
         rightPanel.add(separator);
         rightPanel.add(Box.createVerticalStrut(15));
 
         JLabel historialLabel = new JLabel("Historial de Equipaje");
-        historialLabel.setFont(new Font("Segoe UI", Font.BOLD, 15));
+        historialLabel.setFont(new Font("Dialog", Font.BOLD, 18));
         historialLabel.setForeground(COLOR_DARK);
         historialLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
         rightPanel.add(historialLabel);
         rightPanel.add(Box.createVerticalStrut(10));
 
         JButton btnHistorial = new JButton("Ver Historial");
-        btnHistorial.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        btnHistorial.setFont(new Font("Dialog", Font.BOLD, 17));
         btnHistorial.setForeground(COLOR_WHITE);
         btnHistorial.setBackground(COLOR_BLUE);
         btnHistorial.setFocusPainted(false);
         btnHistorial.setBorderPainted(false);
         btnHistorial.setOpaque(true);
         btnHistorial.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnHistorial.setMaximumSize(new Dimension(230, 40));
+        btnHistorial.setMaximumSize(new Dimension(290, 48));
         btnHistorial.setAlignmentX(Component.LEFT_ALIGNMENT);
         btnHistorial.addActionListener(e -> mostrarHistorial());
         rightPanel.add(btnHistorial);
@@ -179,10 +179,10 @@ public class EquipajePanel extends JPanel {
         JPanel bottomPanel = new JPanel(new BorderLayout());
         bottomPanel.setBackground(COLOR_LIGHT_BG);
         bottomPanel.setBorder(BorderFactory.createMatteBorder(1, 0, 0, 0, COLOR_BORDER));
-        bottomPanel.setPreferredSize(new Dimension(0, 60));
+        bottomPanel.setPreferredSize(new Dimension(0, 72));
 
         statusLabel = new JLabel("  Total equipajes: 0");
-        statusLabel.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        statusLabel.setFont(new Font("Dialog", Font.PLAIN, 16));
         statusLabel.setForeground(new Color(100, 100, 100));
         bottomPanel.add(statusLabel, BorderLayout.WEST);
 
@@ -191,7 +191,7 @@ public class EquipajePanel extends JPanel {
         placeholderPanel.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
 
         JLabel qrLabel = new JLabel("Proximamente - Escaneo QR/PDA");
-        qrLabel.setFont(new Font("Segoe UI", Font.ITALIC, 13));
+        qrLabel.setFont(new Font("Dialog", Font.ITALIC, 16));
         qrLabel.setForeground(new Color(120, 120, 120));
         placeholderPanel.add(qrLabel);
 
@@ -320,14 +320,14 @@ public class EquipajePanel extends JPanel {
 
         JDialog dialog = new JDialog((Frame) SwingUtilities.getWindowAncestor(this),
                 "Historial de Equipaje #" + equipajeId, true);
-        dialog.setSize(750, 450);
+        dialog.setSize(900, 550);
         dialog.setLocationRelativeTo(this);
 
         JPanel dialogPanel = new JPanel(new BorderLayout());
         dialogPanel.setBackground(COLOR_WHITE);
 
         JLabel dialogTitle = new JLabel("  Historial de Equipaje #" + equipajeId);
-        dialogTitle.setFont(new Font("Segoe UI", Font.BOLD, 16));
+        dialogTitle.setFont(new Font("Dialog", Font.BOLD, 19));
         dialogTitle.setForeground(COLOR_DARK);
         dialogTitle.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         dialogTitle.setOpaque(true);
@@ -361,8 +361,8 @@ public class EquipajePanel extends JPanel {
         JPanel closePanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         closePanel.setBackground(COLOR_LIGHT_BG);
         JButton btnCerrar = new JButton("Cerrar");
-        btnCerrar.setFont(new Font("Segoe UI", Font.BOLD, 14));
-        btnCerrar.setPreferredSize(new Dimension(120, 35));
+        btnCerrar.setFont(new Font("Dialog", Font.BOLD, 17));
+        btnCerrar.setPreferredSize(new Dimension(150, 42));
         btnCerrar.addActionListener(e -> dialog.dispose());
         closePanel.add(btnCerrar);
         dialogPanel.add(closePanel, BorderLayout.SOUTH);

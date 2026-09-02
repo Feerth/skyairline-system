@@ -61,14 +61,14 @@ public class VueloDetallePanel extends JPanel {
         topBar.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(220, 220, 220)));
 
         JButton btnVolver = new JButton("\u2190 Volver");
-        btnVolver.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        btnVolver.setFont(new Font("Dialog", Font.BOLD, 17));
         btnVolver.setForeground(COLOR_BLUE);
         btnVolver.setBackground(COLOR_WHITE);
         btnVolver.setFocusPainted(false);
         btnVolver.setBorderPainted(true);
         btnVolver.setBorder(BorderFactory.createLineBorder(COLOR_BLUE, 1));
         btnVolver.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnVolver.setPreferredSize(new Dimension(110, 35));
+        btnVolver.setPreferredSize(new Dimension(140, 42));
         btnVolver.addActionListener(e -> {
             if (mainFrame != null) {
                 ((com.skyairlines.view.main.MainFrame) mainFrame).showVuelos();
@@ -77,7 +77,7 @@ public class VueloDetallePanel extends JPanel {
         topBar.add(btnVolver);
 
         JLabel title = new JLabel("Detalle de Vuelo");
-        title.setFont(new Font("Segoe UI", Font.BOLD, 18));
+        title.setFont(new Font("Dialog", Font.BOLD, 22));
         title.setForeground(COLOR_DARK);
         topBar.add(title);
 
@@ -89,11 +89,11 @@ public class VueloDetallePanel extends JPanel {
         metadataPanel.setBackground(COLOR_WHITE);
         metadataPanel.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(220, 220, 220)),
-                BorderFactory.createEmptyBorder(15, 20, 15, 20)
+                BorderFactory.createEmptyBorder(15, 20, 15, 25)
         ));
 
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(6, 10, 6, 20);
+        gbc.insets = new Insets(6, 10, 6, 25);
         gbc.anchor = GridBagConstraints.WEST;
 
         rutaLabel = addMetadataField(metadataPanel, gbc, 0, "Ruta:", "---");
@@ -111,14 +111,14 @@ public class VueloDetallePanel extends JPanel {
         gbc.gridy = row;
         gbc.weightx = 0;
         JLabel lbl = new JLabel(labelText);
-        lbl.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        lbl.setFont(new Font("Dialog", Font.BOLD, 17));
         lbl.setForeground(new Color(100, 100, 100));
         panel.add(lbl, gbc);
 
         gbc.gridx = 1;
         gbc.weightx = 1;
         JLabel valueLbl = new JLabel(value);
-        valueLbl.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        valueLbl.setFont(new Font("Dialog", Font.PLAIN, 17));
         valueLbl.setForeground(COLOR_DARK);
         panel.add(valueLbl, gbc);
 
@@ -128,16 +128,16 @@ public class VueloDetallePanel extends JPanel {
     private void buildCrewSection(JPanel parent) {
         JPanel crewPanel = new JPanel(new BorderLayout());
         crewPanel.setBackground(COLOR_WHITE);
-        crewPanel.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        crewPanel.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 25));
 
         JLabel crewTitle = new JLabel("Tripulaci\u00f3n Asignada");
-        crewTitle.setFont(new Font("Segoe UI", Font.BOLD, 16));
+        crewTitle.setFont(new Font("Dialog", Font.BOLD, 19));
         crewTitle.setForeground(COLOR_DARK);
         crewTitle.setBorder(BorderFactory.createEmptyBorder(0, 0, 5, 0));
         crewPanel.add(crewTitle, BorderLayout.NORTH);
 
         JLabel noteLabel = new JLabel("Tripulaci\u00f3n registrada en el sistema");
-        noteLabel.setFont(new Font("Segoe UI", Font.ITALIC, 12));
+        noteLabel.setFont(new Font("Dialog", Font.ITALIC, 15));
         noteLabel.setForeground(new Color(130, 130, 130));
 
         tripulacionModel = new TripulacionTableModel(new ArrayList<>());
@@ -173,7 +173,7 @@ public class VueloDetallePanel extends JPanel {
         buttonPanel.setBorder(BorderFactory.createMatteBorder(1, 0, 0, 0, new Color(220, 220, 220)));
 
         JButton btnEquipaje = SwingUtils.createStyledButton("[EQUIPAJE] Administracion de Equipaje", new Color(142, 68, 173), COLOR_WHITE);
-        btnEquipaje.setPreferredSize(new Dimension(240, 40));
+        btnEquipaje.setPreferredSize(new Dimension(300, 48));
         btnEquipaje.addActionListener(e -> {
             if (mainFrame != null) {
                 ((com.skyairlines.view.main.MainFrame) mainFrame).showEquipaje(vueloId);
@@ -181,7 +181,7 @@ public class VueloDetallePanel extends JPanel {
         });
 
         JButton btnAsientos = SwingUtils.createStyledButton("[ASIENTOS] Gestion de Asientos", COLOR_BLUE, COLOR_WHITE);
-        btnAsientos.setPreferredSize(new Dimension(220, 40));
+        btnAsientos.setPreferredSize(new Dimension(280, 48));
         btnAsientos.addActionListener(e -> {
             if (mainFrame != null) {
                 ((com.skyairlines.view.main.MainFrame) mainFrame).showAsientos(vueloId);
@@ -189,7 +189,7 @@ public class VueloDetallePanel extends JPanel {
         });
 
         JButton btnPasajeros = SwingUtils.createStyledButton("[PASAJEROS] Pasajeros del Vuelo", COLOR_GREEN, COLOR_WHITE);
-        btnPasajeros.setPreferredSize(new Dimension(230, 40));
+        btnPasajeros.setPreferredSize(new Dimension(290, 48));
         btnPasajeros.addActionListener(e -> {
             if (mainFrame != null) {
                 ((com.skyairlines.view.main.MainFrame) mainFrame).showPasajeros(vueloId);
@@ -298,7 +298,7 @@ public class VueloDetallePanel extends JPanel {
                     estadoLabel.setForeground(COLOR_GREEN);
                     break;
                 case "CANCELADO":
-                    estadoLabel.setForeground(new Color(231, 76, 60));
+                    estadoLabel.setForeground(new Color(231, 76, 72));
                     break;
                 case "RETRASADO":
                     estadoLabel.setForeground(COLOR_ORANGE);

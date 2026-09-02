@@ -44,7 +44,7 @@ public class MainFrame extends JFrame {
         setTitle("Sky Airlines Per\u00fa - Panel Administrativo");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        setMinimumSize(new Dimension(1024, 700));
+        setMinimumSize(new Dimension(1200, 800));
 
         cardLayout = new CardLayout();
         cardPanel = new JPanel(cardLayout);

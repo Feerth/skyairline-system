@@ -12,20 +12,20 @@ public class SwingUtils {
 
     public static void configureTable(JTable table) {
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        table.setRowHeight(30);
+        table.setRowHeight(36);
         table.setShowGrid(true);
         table.setGridColor(new Color(200, 200, 200));
         table.setIntercellSpacing(new Dimension(1, 1));
-        table.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        table.setFont(new Font("Dialog", Font.PLAIN, 17));
         table.setSelectionBackground(new Color(52, 152, 219));
         table.setSelectionForeground(Color.WHITE);
         table.setFillsViewportHeight(true);
 
         JTableHeader header = table.getTableHeader();
-        header.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        header.setFont(new Font("Dialog", Font.BOLD, 17));
         header.setBackground(new Color(44, 62, 80));
         header.setForeground(Color.WHITE);
-        header.setPreferredSize(new Dimension(header.getWidth(), 35));
+        header.setPreferredSize(new Dimension(header.getWidth(), 42));
     }
 
     public static JButton createStyledButton(String text, Color bgColor, Color fgColor) {
@@ -35,9 +35,9 @@ public class SwingUtils {
         button.setFocusPainted(false);
         button.setBorderPainted(false);
         button.setOpaque(true);
-        button.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        button.setFont(new Font("Dialog", Font.BOLD, 17));
         button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        button.setPreferredSize(new Dimension(150, 35));
+        button.setPreferredSize(new Dimension(185, 42));
         return button;
     }
 
@@ -92,7 +92,7 @@ public class SwingUtils {
         DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
         renderer.setHorizontalAlignment(SwingConstants.CENTER);
         renderer.setVerticalAlignment(SwingConstants.CENTER);
-        renderer.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        renderer.setFont(new Font("Dialog", Font.PLAIN, 17));
         renderer.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
         return renderer;
     }

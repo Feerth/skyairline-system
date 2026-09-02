@@ -24,7 +24,7 @@ public class ReportePanel extends JPanel {
         topBar.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(220, 220, 220)));
 
         JLabel title = new JLabel("Reportes");
-        title.setFont(new Font("Segoe UI", Font.BOLD, 18));
+        title.setFont(new Font("Dialog", Font.BOLD, 22));
         title.setForeground(COLOR_DARK);
         topBar.add(title);
 
@@ -40,19 +40,19 @@ public class ReportePanel extends JPanel {
         card.setBackground(COLOR_LIGHT_BG);
         card.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createLineBorder(new Color(200, 200, 200), 1),
-                BorderFactory.createEmptyBorder(50, 60, 50, 60)
+                BorderFactory.createEmptyBorder(50, 60, 50, 72)
         ));
-        card.setPreferredSize(new Dimension(650, 350));
-        card.setMaximumSize(new Dimension(650, 350));
+        card.setPreferredSize(new Dimension(800, 430));
+        card.setMaximumSize(new Dimension(800, 430));
 
         JLabel iconLabel = new JLabel("R");
-        iconLabel.setFont(new Font("Segoe UI", Font.PLAIN, 60));
+        iconLabel.setFont(new Font("Dialog", Font.PLAIN, 72));
         iconLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         card.add(iconLabel);
         card.add(Box.createVerticalStrut(20));
 
         JLabel constructionTitle = new JLabel("M\u00f3dulo en Construcci\u00f3n");
-        constructionTitle.setFont(new Font("Segoe UI", Font.BOLD, 28));
+        constructionTitle.setFont(new Font("Dialog", Font.BOLD, 35));
         constructionTitle.setForeground(COLOR_DARK);
         constructionTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
         card.add(constructionTitle);
@@ -62,14 +62,14 @@ public class ReportePanel extends JPanel {
                 "El m\u00f3dulo de reportes est\u00e1 siendo desarrollado. " +
                 "Pr\u00f3ximamente podr\u00e1s generar reportes de vuelos, pasajeros, equipaje y personal operativo." +
                 "</div></html>");
-        description.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+        description.setFont(new Font("Dialog", Font.PLAIN, 18));
         description.setForeground(new Color(100, 100, 100));
         description.setAlignmentX(Component.CENTER_ALIGNMENT);
         card.add(description);
         card.add(Box.createVerticalStrut(30));
 
         JLabel versionLabel = new JLabel("VERSI\u00d3N ESTIMADA: Q1 2027");
-        versionLabel.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        versionLabel.setFont(new Font("Dialog", Font.BOLD, 17));
         versionLabel.setForeground(COLOR_BLUE);
         versionLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         card.add(versionLabel);
